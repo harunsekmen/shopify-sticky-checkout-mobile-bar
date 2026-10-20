@@ -1,0 +1,14 @@
+{% comment %}
+  Snippet: Sticky Checkout Markup
+{% endcomment %}
+<div id="shopify-sticky-buy-bar" class="sticky-buy-bar" style="display: none;">
+  <div class="sticky-buy-bar__content">
+    <div class="sticky-buy-bar__info">
+      <span class="sticky-buy-bar__title">{{ product.title | truncate: 25 }}</span>
+      <span class="sticky-buy-bar__price">{{ product.price | money }}</span>
+    </div>
+    <button type="button" class="sticky-buy-bar__btn" onclick="document.querySelector('form[action*='/cart/add'] button[type='submit']').click()">
+      Add to Bag
+    </button>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% comment %}
+  Section: Sticky Mobile Buy Bar
+  Author: Harun Sekmen (@harunsekmen)
+{% endcomment %}
+
+{% if template contains 'product' %}
+  {{ 'sticky-bar.css' | asset_url | stylesheet_tag }}
+  {% render 'sticky-checkout-component' %}
+  <script src="{{ 'sticky-bar.js' | asset_url }}" defer></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Sticky Checkout Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_only",
+      "label": "Show on mobile devices only",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button Background",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Checkout Bar"
+    }
+  ]
+}
+{% endschema %}
